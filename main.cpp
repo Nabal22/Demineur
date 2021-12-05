@@ -5,6 +5,7 @@
  * @version 1 27/11/2021
  * @brief Projet SDA démineur - Exercice 1
  * Structures de donn�es et algorithmes - BUT 1 Paris 16
+ * Changement test
  */
 
 #include <iostream>
