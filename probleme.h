@@ -1,4 +1,4 @@
-/** negro
+/**
  * @file probleme.h
  * Projet SDA
  * @author Regenwetter Simon et Talagrand Alban
