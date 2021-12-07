@@ -1,3 +1,4 @@
 C:\Users\alban\source\repos\Projet_Demineur\Debug\Projet_Demineur.exe
 E:\1ereAnneeSimon\SDA\Projet\Projet_version_2\Projet_Demineur\Projet_Demineur\Debug\Projet_Demineur.exe
 C:\Users\alban\Source\Repos\Nabal22\projet-demineur\Debug\Projet_Demineur.exe
+C:\Users\simon\Source\Repos\Nabal22\projet-demineur\Debug\Projet_Demineur.exe

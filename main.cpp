@@ -18,7 +18,7 @@ using namespace std;
  /**
   * @brief
  */
-    struct Coup {
+struct Coup {
     unsigned short type, position;
 };
 
@@ -47,14 +47,16 @@ int main (){
                 ecrire(Mines, i, tempMine);
             }
             cin >> nbCoups;
+            initialiser(coupType, nbCoups);
+            initialiser(coupEmplacement, nbCoups);
             for(i = 0; i < nbCoups; i++) {
                 cin >> type >> tempCoup;
                 cout << "type :" << type << "coup :" << tempCoup << endl;
                 ecrire(coupType, i, type);
                 ecrire(coupEmplacement, i, tempCoup);
             }
-            historique.type = coupType;
-            historique.position = coupEmplacement;
+            historique.type = &coupType;
+            historique.position = &coupEmplacement;
             ProdGrille(lignes, colonnes, nbMines, Mines, nbCoups, historique);
             break;
         //case 3 :
