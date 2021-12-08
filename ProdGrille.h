@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _PRODGRILLE_
 #define _PRODGRILLE_
 
@@ -9,16 +10,13 @@
  * @brief Projet SDA démineur - Exercice 1
  * Structures de donn�es et algorithmes - BUT 1 Paris 16
 */
-#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
 
-#include "ProdGrille.h"
-#include "Grille.h"
 #include "tableau.h"
 #include "historique.h"
-#include "probleme.h"
+#include "Grille.h"
 
 /** @brief Affiche la grille du demineur (Commande 2)
  * @param [in] le nombre de ligne

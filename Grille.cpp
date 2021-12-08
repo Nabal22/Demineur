@@ -1,7 +1,9 @@
 ﻿#pragma once
 
-#include <assert>
+#include <iostream>
+#include <cassert>
 #include "Grille.h"
+using namespace std;
 
 void initGrille(Grille& c, unsigned int capa) {
     // V�rifiez la pr�condition
