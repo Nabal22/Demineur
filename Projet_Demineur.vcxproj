@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Grille.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="probleme.cpp" />
     <ClCompile Include="ProdGrille.cpp" />

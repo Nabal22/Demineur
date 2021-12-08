@@ -1,7 +1,9 @@
 ﻿#pragma once
 
-#include <assert>
+#include <iostream>
+#include <cassert>
 #include "Grille.h"
+using namespace std;
 
 void initGrille(Grille& c, unsigned int capa) {
     // V�rifiez la pr�condition
@@ -30,7 +32,7 @@ unsigned char lireGrille(const Grille& c, unsigned int i) {
 }
 
 
-void ecrireGrille(Grille& c, unsigned int i, const unsigned int& it) {
+void ecrireGrille(Grille& c, unsigned int i, const unsigned char& it) {
     assert(i <= c.capacite);
     c.tab[i] = it;
 }
