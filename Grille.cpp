@@ -30,7 +30,7 @@ unsigned char lireGrille(const Grille& c, unsigned int i) {
 }
 
 
-void ecrireGrille(Grille& c, unsigned int i, const unsigned int& it) {
+void ecrireGrille(Grille& c, unsigned int i, const unsigned char& it) {
     assert(i <= c.capacite);
     c.tab[i] = it;
 }

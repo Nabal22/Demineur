@@ -13,6 +13,7 @@
 #include "ProdGrille.h"
 #include "tableau.h"
 #include "historique.h"
+#include "Grille.h"
 
 using namespace std;
  /**
@@ -51,7 +52,7 @@ int main (){
             initialiser(coupEmplacement, nbCoups);
             for(i = 0; i < nbCoups; i++) {
                 cin >> type >> tempCoup;
-                cout << "type :" << type << "coup :" << tempCoup << endl;
+                cout << "type : " << " | " << type << "coup :" << tempCoup << endl;
                 ecrire(coupType, i, type);
                 ecrire(coupEmplacement, i, tempCoup);
             }

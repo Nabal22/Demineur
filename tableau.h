@@ -1,4 +1,7 @@
 #pragma once
+#ifndef _TABLEAU_
+#define _TABLEAU_
+
 
 /** @brief Type du conteneur d'items
  *  alloue en memoire dynamique et de capacite fixee
@@ -42,3 +45,5 @@ unsigned int lire(const Conteneur& c, unsigned int i);
  * @pre i < c.capacite
  */
 void ecrire(Conteneur& c, unsigned int i, const unsigned int& it);
+
+#endif

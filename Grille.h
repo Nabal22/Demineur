@@ -1,3 +1,7 @@
+#pragma once
+#ifndef _GRILLE_
+#define _GRILLE_
+
 /**
  * @file probleme.cpp
  * Projet SDA
@@ -11,3 +15,14 @@ struct Grille {
 	unsigned int capacite; 	// capacite du Grille (>0)
 	unsigned char* tab;	// support du Grille, un tableau alloue en memoire dynamique de taille fixee (capacite) 
 };
+
+
+void initGrille(Grille& c, unsigned int capa);
+
+void detruireGrille(Grille& c);
+
+unsigned char lireGrille(const Grille& c, unsigned int i);
+
+void ecrireGrille(Grille& c, unsigned int i, const unsigned char& it);
+
+#endif
