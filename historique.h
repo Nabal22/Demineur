@@ -2,13 +2,13 @@
 #ifndef _HISTORIQUE_
 #define _HISOTIRQUE_
 #include "tableau.h"
-
+#include "Grille.h"
 /** @brief Contient l'historique des coups
  *
  */
 struct Historique {
-	Conteneur* type; // de type conteneur ( Pas de type char car erreur lors de la conversion dans le main )
-	Conteneur* position;
+	Grille* type; // de type conteneur ( Pas de type char car erreur lors de la conversion dans le main )
+	Grille* position;
 };
 
 /*
