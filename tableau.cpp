@@ -41,6 +41,6 @@ unsigned int lire(const Conteneur& c, unsigned int i) {
 
 
 void ecrire(Conteneur& c, unsigned int i, const unsigned int& it) {
-    assert(i < c.capacite);
+    assert(i <= c.capacite);
     c.tab[i] = it;
 }

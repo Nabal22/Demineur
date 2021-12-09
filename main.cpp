@@ -5,6 +5,7 @@
  * @version 1 27/11/2021
  * @brief Projet SDA démineur - Exercice 1
  * Structures de donn�es et algorithmes - BUT 1 Paris 16
+ * Simon petite merde
  */
 
 #include <iostream>
@@ -12,12 +13,13 @@
 #include "ProdGrille.h"
 #include "tableau.h"
 #include "historique.h"
+#include "Grille.h"
 
 using namespace std;
  /**
   * @brief
  */
-    struct Coup {
+struct Coup {
     unsigned short type, position;
 };
 
@@ -38,22 +40,23 @@ int main (){
             cin >> lignes >> colonnes >> nbMines;
             Historique historique;
             Conteneur Mines;
-            Conteneur coupType;
-            Conteneur coupEmplacement;
+            Grille coupType;
+            Grille coupEmplacement;
             initialiser(Mines, nbMines);
             for (i = 0; i < nbMines; i++) {
                 cin >> tempMine;
                 ecrire(Mines, i, tempMine);
             }
             cin >> nbCoups;
+            initGrille(coupType, nbCoups);
+            initGrille(coupEmplacement, nbCoups);
             for(i = 0; i < nbCoups; i++) {
                 cin >> type >> tempCoup;
-                cout << "type :" << type << "coup :" << tempCoup << endl;
-                ecrire(coupType, i, type);
-                ecrire(coupEmplacement, i, tempCoup);
+                ecrireGrille(coupType, i, type);
+                ecrireGrille(coupEmplacement, i, tempCoup);
             }
-            historique.type = coupType;
-            historique.position = coupEmplacement;
+            historique.type = &coupType;
+            historique.position = &coupEmplacement;
             ProdGrille(lignes, colonnes, nbMines, Mines, nbCoups, historique);
             break;
         //case 3 :
