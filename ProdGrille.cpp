@@ -11,6 +11,9 @@
 #include "Grille.h"
 using namespace std;
 
+
+
+
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
 	cout << ligne << " " << colonne << endl;
 	
