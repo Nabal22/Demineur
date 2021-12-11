@@ -1,4 +1,5 @@
-﻿/**
+﻿#pragma once
+/**
  * @file probleme.cpp
  * Projet SDA
  * @author Regenwetter Simon et Talagrand Alban
@@ -6,55 +7,55 @@
  * @brief Projet SDA démineur - Exercice 1
  * Structures de donn�es et algorithmes - BUT 1 Paris 16
 */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-
 #include "ProdGrille.h"
 #include "Grille.h"
-#include "tableau.h"
-
 using namespace std;
 
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
 	cout << ligne << " " << colonne << endl;
-
-	unsigned int i;
-	unsigned int j;
+	
+	unsigned int i, j;
 	bool verif = false;
 	Grille grille;
+
+	
 	initGrille(grille,colonne*ligne);
 
-	for (i = 0; i >= taille; i++) {
-		grille.tab[i] = " ";
+	for (i = 0; i < grille.capacite; i++) { // On remplit la grille de .
+		ecrireGrille(grille, i, '.');
+	}
+	
+	for (i = 0; i < nbCoups; i++) { // coup joué par l'utilsateur
+		ecrireGrille(grille, historique.position->tab[i], 'e');
 	}
 
-
-	for (i = 0; i >= nbCoups; i++) {
-		grille.tab[historique.position[i]] = "e";
-	}
-
-	for (i = 0; i >= nbCoups; i++) {
-		if (historique.type[i] == 'D' && grille.tab[historique.position->tab[i]] != "e") {
-			grille.tab[historique.position->tab[i]] = " ";
-		}
-		else {
+	for (i = 0; i < nbCoups; i++) {
+		if (historique.type->tab[i] == 'D' && historique.position->tab[i] == Mines.tab[i]) {
 			verif = true;
 		}
+		else {
+			ecrireGrille(grille, historique.position->tab[i], ' ');
+		}
 
-		if (historique.type[i] == 'm') {
-			grille.tab[historique.position->tab[i]] = 'x';
+		if (historique.type->tab[i] == 'M') {
+			ecrireGrille(grille, historique.position->tab[i], 'x');
 		}
 	}
-
+	cout << endl;
+	cout << "valeur verif" << verif;
+	/*
 	if (verif) {
-		for (j = 0; j <= nbMines; j++) {
-			grille.tab[Mines.tab[j]] = 'm';
+		for (j = 0; j < nbMines; j++) {
+			ecrireGrille(grille, Mines.tab[j], 'm');
 		}
 	}
-
-	for (i = 0; i <= ligne; i++) {
-		cout << grille.tab[i];
+	*/
+	// affichage temp
+	for (i = 0, j=0; i < grille.capacite; i++,j++) {
+		if (j == colonne) {
+			cout << endl;
+			j = 0;
+		}
+		cout << "| " << grille.tab[i] << " |";
 	}
 }
