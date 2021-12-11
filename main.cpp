@@ -17,7 +17,7 @@
 
 using namespace std;
  /**
-  * @brief test modf
+  * @brief test modif
  */
 struct Coup {
     unsigned short type, position;

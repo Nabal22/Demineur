@@ -11,48 +11,54 @@
 #include "Grille.h"
 using namespace std;
 
+bool verifCase(unsigned char coup, Conteneur mines) {
+	for (unsigned int i = 0; i < mines.capacite; i++) {
+		if (coup == mines.tab[i]) {
+			return true;
+		}
+	}
+	return false;
+}
 
+void ProdCase(Grille grille, unsigned int i , Conteneur mines) {
 
+}
 
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
 	cout << ligne << " " << colonne << endl;
 	
 	unsigned int i, j;
-	bool verif = false;
 	Grille grille;
-
 	
 	initGrille(grille,colonne*ligne);
 
 	for (i = 0; i < grille.capacite; i++) { // On remplit la grille de .
 		ecrireGrille(grille, i, '.');
 	}
-	
-	for (i = 0; i < nbCoups; i++) { // coup joué par l'utilsateur
-		ecrireGrille(grille, historique.position->tab[i], 'e');
-	}
-
-	for (i = 0; i < nbCoups; i++) {
-		if (historique.type->tab[i] == 'D' && historique.position->tab[i] == Mines.tab[i]) {
-			verif = true;
+	/* Pour chaque coup,
+	on vérifie si c'est une mine 
+		si oui : fin, on rentre m
+				on rentre m pour les autres mines
+		si non : on va compter les mines voisines, 
+				si il y en a 0 on rentre " " dans la case et on refait la même chose pour ses cases voisines
+				si il y en a 0< on rentre le nombre de mines environnantes "nbmines" et fin
+	*/
+	for (i = 0; i < nbCoups; i++)
+	{
+		/*Cas ou l'on découvre une mine*/
+		if (historique.type->tab[i] == 'D' && verifCase(historique.position->tab[i], Mines)) {
+			for (j = 0; j < Mines.capacite; j++) {
+				ecrireGrille(grille, Mines.tab[j], 'm');
+			}
 		}
-		else {
+		if (historique.type->tab[i] == 'D' && !verifCase(historique.position->tab[i], Mines)) {
 			ecrireGrille(grille, historique.position->tab[i], ' ');
 		}
-
+		/*Cas ou l'on marque une case*/
 		if (historique.type->tab[i] == 'M') {
 			ecrireGrille(grille, historique.position->tab[i], 'x');
 		}
 	}
-	cout << endl;
-	cout << "valeur verif" << verif;
-	/*
-	if (verif) {
-		for (j = 0; j < nbMines; j++) {
-			ecrireGrille(grille, Mines.tab[j], 'm');
-		}
-	}
-	*/
 	// affichage temp
 	for (i = 0, j=0; i < grille.capacite; i++,j++) {
 		if (j == colonne) {

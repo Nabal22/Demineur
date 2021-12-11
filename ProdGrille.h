@@ -18,14 +18,31 @@
 #include "historique.h"
 #include "Grille.h"
 
-/** @brief Affiche la grille du demineur (Commande 2)
+/**
+ * @brief Vérifie si une case est une mine
+ * @param [in] la case
+ * @param [in] le conteneur de mines
+ * @return renvoie si la case est une mine ou pas
+ */
+bool verifCase(unsigned char coup, Conteneur mines);
+
+/**
+ * @brief Modifie le contenu d'une case
+ * @param [in-out] la grille
+ * @param [in] l'indice de la case
+ * @param [in] le conteneur de mines
+ */
+void ProdCase(Grille grille, unsigned int i, Conteneur mines);
+
+/** 
+ * @brief Affiche la grille du demineur (Commande 2)
  * @param [in] le nombre de ligne
  * @param [in] le nombre de colonne
  * @param [in] le nombre de mines
  * @param [in] la position des mines
  * @param [in] le nombre de coups
  * @param [in] l'historique de coups
- * @pre*/
+ * @pre
+ */
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique);
-
 #endif
