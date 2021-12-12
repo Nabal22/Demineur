@@ -20,8 +20,90 @@ bool verifCase(unsigned char coup, Conteneur mines) {
 	return false;
 }
 
-void ProdCase(Grille grille, unsigned int i , Conteneur mines) {
-
+void ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
+	unsigned int mineAlentour;
+	unsigned int j;
+	if (i == 0) {
+		for (j = 0; j <= mines.capacite; j++) {
+			if ((i+1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + colonne) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + colonne + 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+		}
+	}
+	else if (i == colonne - 1) {
+		for (j = 0; j <= mines.capacite; j++) {
+			if ((i - 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + colonne) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + colonne - 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+		}
+	}
+	else if (i == ((ligne*colonne-1)-ligne)) {
+		for (j = 0; j <= mines.capacite; j++) {
+			if ((i + 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i - colonne) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i - colonne + 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+		}
+	}
+	else if (i == (ligne * colonne - 1)) {
+		for (j = 0; j <= mines.capacite; j++) {
+			if ((i - 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i - colonne) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i - colonne - 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+		}
+	}
+	else {
+		for (j = 0; j <= mines.capacite; j++) {
+			if ((i - 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i - colonne - 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i - colonne) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i - colonne + 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + colonne + 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + colonne) == mines.tab[j]) {
+				++mineAlentour;
+			}
+			if ((i + colonne - 1) == mines.tab[j]) {
+				++mineAlentour;
+			}
+		}
+	}
+	return mineAlentour;
 }
 
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
