@@ -21,7 +21,7 @@ bool verifCase(unsigned char coup, Conteneur mines) {
 }
 
 void ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
-	unsigned int mineAlentour;
+	unsigned int mineAlentour = 0;
 	unsigned int j;
 	if (i == 0) {
 		for (j = 0; j <= mines.capacite; j++) {
