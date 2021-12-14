@@ -119,7 +119,7 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 	
 	unsigned int i, j, k;
 	Grille grille;
-	
+	unsigned int mineAutourCase;
 	initGrille(grille,colonne*ligne);
 
 	for (i = 0; i < grille.capacite; i++) { // On remplit la grille de .
@@ -135,6 +135,7 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 	*/
 	for (i = 0; i < nbCoups; i++)
 	{
+		mineAutourCase = 0;
 		/*Cas ou l'on découvre une mine*/
 		if (historique.type->tab[i] == 'D' && verifCase(historique.position->tab[i], Mines)) {
 			for (j = 0; j < Mines.capacite; j++) {
@@ -142,7 +143,13 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 			}
 		}
 		if (historique.type->tab[i] == 'D' && !verifCase(historique.position->tab[i], Mines)) {
-			ecrireGrille(grille, historique.position->tab[i], ' ');
+			mineAutourCase = ProdCase(grille, historique.position->tab[i],Mines,ligne,colonne);
+			if (mineAutourCase == 0) {
+				ecrireGrille(grille, historique.position->tab[i], ' ');
+			}
+			else {
+				ecrireGrille(grille, historique.position->tab[i], mineAutourCase);
+			}
 		}
 		/*Cas ou l'on marque une case*/
 		if (historique.type->tab[i] == 'M') {
@@ -150,6 +157,7 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 		}
 	}
 
+	// Affichage de la grille
 	ProdLigne(colonne);
 	for (i = 0, j=0; i < grille.capacite; i++,j++) {
 		if (j == colonne)
@@ -164,7 +172,6 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 		else {
 			cout << " | " << grille.tab[i];
 		}
-
 	}
 	cout << " |";
 	cout << endl;

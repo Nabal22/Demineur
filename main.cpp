@@ -23,7 +23,6 @@ struct Coup {
     unsigned short type, position;
 };
 
-
 int main (){
     unsigned int commande;
 

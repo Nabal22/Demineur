@@ -32,7 +32,7 @@ bool verifCase(unsigned char coup, Conteneur mines);
  * @param [in] l'indice de la case
  * @param [in] le conteneur de mines
  */
-unsigned int ProdCase(Grille grille, unsigned int i, Conteneur mines);
+unsigned int ProdCase(Grille grille, unsigned int i, Conteneur mines, unsigned int ligne, unsigned int colonne);
 
 /**
  * @brief produit une ligne de "___"
