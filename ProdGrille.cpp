@@ -148,7 +148,7 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 				ecrireGrille(grille, historique.position->tab[i], ' ');
 			}
 			else {
-				ecrireGrille(grille, historique.position->tab[i], mineAutourCase);
+				ecrireGrille(grille, historique.position->tab[i], mineAutourCase + 48);
 			}
 		}
 		/*Cas ou l'on marque une case*/
