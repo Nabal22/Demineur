@@ -32,7 +32,13 @@ bool verifCase(unsigned char coup, Conteneur mines);
  * @param [in] l'indice de la case
  * @param [in] le conteneur de mines
  */
-void ProdCase(Grille grille, unsigned int i, Conteneur mines);
+unsigned int ProdCase(Grille grille, unsigned int i, Conteneur mines);
+
+/**
+ * @brief produit une ligne de "___"
+ * @param [in] le nombre de colonne de la grille
+ */
+void ligne(unsigned int colonne);
 
 /** 
  * @brief Affiche la grille du demineur (Commande 2)

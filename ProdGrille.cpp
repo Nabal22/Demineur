@@ -20,7 +20,7 @@ bool verifCase(unsigned char coup, Conteneur mines) {
 	return false;
 }
 
-void ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
+unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
 	unsigned int mineAlentour = 0;
 	unsigned int j;
 	if (i == 0) {
@@ -109,7 +109,7 @@ void ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int lign
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
 	cout << ligne << " " << colonne << endl;
 	
-	unsigned int i, j;
+	unsigned int i, j, k;
 	Grille grille;
 	
 	initGrille(grille,colonne*ligne);
@@ -141,12 +141,33 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 			ecrireGrille(grille, historique.position->tab[i], 'x');
 		}
 	}
-	// affichage temp
+
+	for (k = 0; k < colonne; k++) {
+		cout << " ___";
+	}
+	cout << endl;
 	for (i = 0, j=0; i < grille.capacite; i++,j++) {
-		if (j == colonne) {
+		if (j == colonne)
+		{
+			cout <<" |"<< endl;
+			for (k = 0; k < colonne; k++) {
+				cout << " ___";
+			}
 			cout << endl;
 			j = 0;
 		}
-		cout << "| " << grille.tab[i] << " |";
+		if (j == 0) {
+			cout << "| " << grille.tab[i];
+		}
+		else {
+			cout << " | " << grille.tab[i];
+		}
+
 	}
+	cout << " |";
+	cout << endl;
+	for (k = 0; k < colonne; k++) {
+		cout << " ___";
+	}
+	cout << endl;
 }
