@@ -40,6 +40,8 @@ unsigned int ProdCase(Grille grille, unsigned int i, Conteneur mines, unsigned i
  */
 void ProdLigne(unsigned int colonne);
 
+void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille Grille, Historique historique);
+
 /** 
  * @brief Affiche la grille du demineur (Commande 2)
  * @param [in] le nombre de ligne

@@ -114,6 +114,45 @@ void ProdLigne(unsigned int colonne) {
 	cout << endl;
 }
 
+void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille Grille, Historique historique) {
+	mineAutourCase = ProdCase(Grille, historique.position->tab[idcase], Mines, ligne, colonne);
+	if (mineAutourCase == 0) {
+		//ecrireGrille(Grille, historique.position->tab[idcase], ' ');
+
+		// case coin haut gauche
+		if (idcase % colonne == 0 ) {
+			DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, Grille, historique);
+			DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, Grille, historique);
+			DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, Grille, historique);
+		}
+		// case coin bas gauche
+
+		// case gauche
+
+		// case coin haut droit
+
+		// case coin bas droit
+
+		// case droite
+
+		// case haut
+
+		// case bas
+
+		else if (idcase < colonne) {
+
+		}
+
+		DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, Grille, historique);
+		DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, Grille, historique);
+		DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, Grille, historique);
+		DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, Grille, historique);
+	}
+	else {
+		ecrireGrille(Grille, historique.position->tab[idcase], mineAutourCase + 48);
+	}
+}
+
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
 	cout << ligne << " " << colonne << endl;
 	
@@ -143,13 +182,8 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 			}
 		}
 		if (historique.type->tab[i] == 'D' && !verifCase(historique.position->tab[i], Mines)) {
-			mineAutourCase = ProdCase(grille, historique.position->tab[i],Mines,ligne,colonne);
-			if (mineAutourCase == 0) {
-				ecrireGrille(grille, historique.position->tab[i], ' ');
-			}
-			else {
-				ecrireGrille(grille, historique.position->tab[i], mineAutourCase + 48);
-			}
+			mineAutourCase = ProdCase(grille, historique.position->tab[i], Mines, ligne, colonne);
+			DemasqueCase(historique.position->tab[i], ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		/*Cas ou l'on marque une case*/
 		if (historique.type->tab[i] == 'M') {
