@@ -38,7 +38,7 @@ unsigned int ProdCase(Grille grille, unsigned int i, Conteneur mines);
  * @brief produit une ligne de "___"
  * @param [in] le nombre de colonne de la grille
  */
-void ligne(unsigned int colonne);
+void ProdLigne(unsigned int colonne);
 
 /** 
  * @brief Affiche la grille du demineur (Commande 2)

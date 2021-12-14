@@ -106,6 +106,14 @@ unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned 
 	return mineAlentour;
 }
 
+void ProdLigne(unsigned int colonne) {
+	unsigned int k;
+	for (k = 0; k < colonne; k++) {
+		cout << " ___";
+	}
+	cout << endl;
+}
+
 void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
 	cout << ligne << " " << colonne << endl;
 	
@@ -142,18 +150,12 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 		}
 	}
 
-	for (k = 0; k < colonne; k++) {
-		cout << " ___";
-	}
-	cout << endl;
+	ProdLigne(colonne);
 	for (i = 0, j=0; i < grille.capacite; i++,j++) {
 		if (j == colonne)
 		{
 			cout <<" |"<< endl;
-			for (k = 0; k < colonne; k++) {
-				cout << " ___";
-			}
-			cout << endl;
+			ProdLigne(colonne);
 			j = 0;
 		}
 		if (j == 0) {
@@ -166,8 +168,5 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 	}
 	cout << " |";
 	cout << endl;
-	for (k = 0; k < colonne; k++) {
-		cout << " ___";
-	}
-	cout << endl;
+	ProdLigne(colonne);
 }
