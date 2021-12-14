@@ -20,6 +20,7 @@ bool verifCase(unsigned char coup, Conteneur mines) {
 	return false;
 }
 
+//2 4 6 5 1 5 12 7 19 3 D15 M5 D0
 unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
 	unsigned int mineAlentour = 0;
 	unsigned int j;
@@ -97,8 +98,9 @@ unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned 
 	}
 	//droite
 	else if (((i + 1) % colonne) == 0) {
+		cout << "TEEEESSSSTTTT" << endl;
 		for (j = 0; j <= mines.capacite; j++) {
-			if ((i + 1) == mines.tab[j]) {
+			if ((i - 1) == mines.tab[j]) {
 				++mineAlentour;
 			}
 			if ((i + colonne) == mines.tab[j]) {
@@ -107,17 +109,16 @@ unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned 
 			if ((i - colonne) == mines.tab[j]) {
 				++mineAlentour;
 			}
-			if ((i - colonne + 1) == mines.tab[j]) {
+			if ((i - colonne - 1) == mines.tab[j]) {
 				++mineAlentour;
 			}
-			if ((i + colonne + 1) == mines.tab[j]) {
+			if ((i + colonne - 1) == mines.tab[j]) {
 				++mineAlentour;
 			}
 		}
 	}
 	//haut
 	else if (i < colonne) {
-		cout << "TESSSSST" << endl;
 		for (j = 0; j <= mines.capacite; j++) {
 			if ((i + 1) == mines.tab[j]) {
 				++mineAlentour;
@@ -137,8 +138,7 @@ unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned 
 		}
 	}
 	//bas
-	else if ((ligne * colonne) - ligne <= i < ligne * colonne) {
-	
+	else if (i >= (colonne * ligne - colonne) && i < grille.capacite) {
 		for (j = 0; j <= mines.capacite; j++) {
 
 			if ((i + 1) == mines.tab[j]) {
@@ -250,7 +250,7 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
 			DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		// case bas
-		else if ((ligne * colonne) - colonne <= idcase < ligne * colonne) {
+		else if (idcase >= (colonne*ligne-colonne) && idcase<grille.capacite) {
 			cout << "// case bas" << endl;
 			DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
