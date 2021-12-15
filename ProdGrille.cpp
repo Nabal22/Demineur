@@ -20,7 +20,6 @@ bool verifCase(unsigned char coup, Conteneur mines) {
 	return false;
 }
 
-//2 4 6 5 1 5 12 7 19 3 D15 M5 D0
 unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
 	unsigned int mineAlentour = 0;
 	unsigned int j;
@@ -98,7 +97,6 @@ unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned 
 	}
 	//droite
 	else if (((i + 1) % colonne) == 0) {
-		cout << "TEEEESSSSTTTT" << endl;
 		for (j = 0; j <= mines.capacite; j++) {
 			if ((i - 1) == mines.tab[j]) {
 				++mineAlentour;
@@ -199,65 +197,55 @@ void ProdLigne(unsigned int colonne) {
 
 void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille grille, Historique historique) {
 	mineAutourCase = ProdCase(grille, idcase, Mines, ligne, colonne);
-	cout <<"ID :  " << idcase << " | Mine autour de case : " << mineAutourCase << endl;
 	if (mineAutourCase == 0 && grille.tab[idcase]=='.' && idcase < grille.capacite) {
 		ecrireGrille(grille, idcase, ' ');
 		// case coin haut gauche
 		if (idcase == 0) {
-			cout << "case coin haut gauche" << endl;
 			DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		// case coin bas gauche
 		else if (((ligne * colonne - 1) - ligne) == idcase) {
-			cout << "case coin bas gauche" << endl;
 			DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 
 		// case coin haut droit
 		else if (colonne - 1 == 0) {
-			cout << "case coin haut droit" << endl;
 			DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 
 		// case coin bas droit
 		else if ((ligne * colonne - 1) == idcase) {
-			cout << "case coin bas droit" << endl;
 			DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		// case haut
 		else if (idcase < colonne) {
-			cout << " case haut" << endl;
 			DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + 1 , ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		// case gauche
 		else if (idcase % colonne == 0) {
-			cout << " case gauche" << endl;
 			DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		// case droite
 		else if (((idcase + 1) % colonne) == 0) {
-			cout << "case droite" << endl;
 			DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		// case bas
 		else if (idcase >= (colonne*ligne-colonne) && idcase<grille.capacite) {
-			cout << "// case bas" << endl;
 			DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		else {
-			cout << "bien rentré mon gars";
 			DemasqueCase(idcase - colonne, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase - 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
 			DemasqueCase(idcase + 1, ligne, colonne, mineAutourCase, Mines, grille, historique);
@@ -265,7 +253,6 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
 		}
 	}
 	else {
-		cout << "nobug else" << endl;
 		if (grille.tab[idcase] == '.' && idcase < grille.capacite) {
 			ecrireGrille(grille, idcase, mineAutourCase + 48);
 		}
@@ -295,7 +282,7 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 	{
 		mineAutourCase = 0;
 		/*Cas ou l'on découvre une mine*/
-		if (historique.type->tab[i] == 'D' && verifCase(historique.position->tab[i], Mines)) {
+		if ( (historique.type->tab[i] == 'D' || historique.type->tab[i] == 'M') && verifCase(historique.position->tab[i], Mines)) {
 			for (j = 0; j < Mines.capacite; j++) {
 				ecrireGrille(grille, Mines.tab[j], 'm');
 			}
@@ -305,7 +292,7 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 			DemasqueCase(historique.position->tab[i], ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		/*Cas ou l'on marque une case*/
-		if (historique.type->tab[i] == 'M') {
+		if (historique.type->tab[i] == 'M' && !verifCase(historique.position->tab[i], Mines)) {
 			ecrireGrille(grille, historique.position->tab[i], 'x');
 		}
 	}
