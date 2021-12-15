@@ -52,5 +52,5 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
  * @param [in] l'historique de coups
  * @pre
  */
-void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique);
+void ProdGrille(Grille grille,unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage);
 #endif

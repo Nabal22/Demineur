@@ -259,13 +259,12 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
 	}
 }
 
-void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique) {
+void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage) {
 	cout << ligne << " " << colonne << endl;
-	
+
 	unsigned int i, j, k;
-	Grille grille;
 	unsigned int mineAutourCase;
-	initGrille(grille,colonne*ligne);
+	
 
 	for (i = 0; i < grille.capacite; i++) { // On remplit la grille de .
 		ecrireGrille(grille, i, '.');
@@ -298,22 +297,24 @@ void ProdGrille(unsigned int ligne, unsigned int colonne, unsigned int nbMines, 
 	}
 
 	// Affichage de la grille
-	ProdLigne(colonne);
-	for (i = 0, j=0; i < grille.capacite; i++,j++) {
-		if (j == colonne)
-		{
-			cout <<" |"<< endl;
-			ProdLigne(colonne);
-			j = 0;
+	if (affichage == true) {
+		ProdLigne(colonne);
+		for (i = 0, j = 0; i < grille.capacite; i++, j++) {
+			if (j == colonne)
+			{
+				cout << " |" << endl;
+				ProdLigne(colonne);
+				j = 0;
+			}
+			if (j == 0) {
+				cout << "| " << grille.tab[i];
+			}
+			else {
+				cout << " | " << grille.tab[i];
+			}
 		}
-		if (j == 0) {
-			cout << "| " << grille.tab[i];
-		}
-		else {
-			cout << " | " << grille.tab[i];
-		}
+		cout << " |";
+		cout << endl;
+		ProdLigne(colonne);
 	}
-	cout << " |";
-	cout << endl;
-	ProdLigne(colonne);
 }
