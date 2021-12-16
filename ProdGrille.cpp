@@ -281,9 +281,13 @@ void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigne
 	{
 		mineAutourCase = 0;
 		/*Cas ou l'on découvre une mine*/
-		if ( (historique.type->tab[i] == 'D' || historique.type->tab[i] == 'M') && verifCase(historique.position->tab[i], Mines)) {
+		if ( ( (historique.type->tab[i] == 'D') && verifCase(historique.position->tab[i], Mines) ) || (historique.type->tab[i] == 'M' && !verifCase(historique.position->tab[i], Mines) ) ) {
+			cout << "TEST : " << i << endl;
 			for (j = 0; j < Mines.capacite; j++) {
 				ecrireGrille(grille, Mines.tab[j], 'm');
+			}
+			if (historique.type->tab[i] == 'M') {
+				ecrireGrille(grille, historique.position->tab[i], 'x');
 			}
 		}
 		if (historique.type->tab[i] == 'D' && !verifCase(historique.position->tab[i], Mines)) {
@@ -291,7 +295,7 @@ void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigne
 			DemasqueCase(historique.position->tab[i], ligne, colonne, mineAutourCase, Mines, grille, historique);
 		}
 		/*Cas ou l'on marque une case*/
-		if (historique.type->tab[i] == 'M' && !verifCase(historique.position->tab[i], Mines)) {
+		if (historique.type->tab[i] == 'M' && verifCase(historique.position->tab[i], Mines)) {
 			ecrireGrille(grille, historique.position->tab[i], 'x');
 		}
 	}

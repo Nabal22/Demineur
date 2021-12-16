@@ -14,7 +14,7 @@
 #include "tableau.h"
 #include "historique.h"
 #include "Grille.h"
-#include "PartieGagne.h"
+#include "EtatPartie.h"
 
 using namespace std;
  /**

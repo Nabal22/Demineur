@@ -141,7 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Grille.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PartieGagne.cpp" />
+    <ClCompile Include="EtatPartie.cpp" />
     <ClCompile Include="probleme.cpp" />
     <ClCompile Include="ProdGrille.cpp" />
     <ClCompile Include="tableau.cpp" />
@@ -149,7 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Grille.h" />
     <ClInclude Include="historique.h" />
-    <ClInclude Include="PartieGagne.h" />
+    <ClInclude Include="EtatPartie.h" />
     <ClInclude Include="probleme.h" />
     <ClInclude Include="ProdGrille.h" />
     <ClInclude Include="tableau.h" />
