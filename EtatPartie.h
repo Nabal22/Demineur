@@ -15,4 +15,7 @@
  */
 bool estGagne(Grille grille, Conteneur mines);
 
+
+
+
 #endif

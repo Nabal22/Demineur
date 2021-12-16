@@ -7,6 +7,8 @@
  * @brief Projet SDA démineur - Exercice 1
  * Structures de donn�es et algorithmes - BUT 1 Paris 16
 */
+#include <iostream>
+#include <cassert>
 #include "ProdGrille.h"
 #include "Grille.h"
 using namespace std;
@@ -21,6 +23,7 @@ bool verifCase(unsigned char coup, Conteneur mines) {
 }
 
 unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
+	assert(i < grille.capacite);
 	unsigned int mineAlentour = 0;
 	unsigned int j;
 	if (i == 0) {
@@ -196,6 +199,7 @@ void ProdLigne(unsigned int colonne) {
 }
 
 void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille grille, Historique historique) {
+	assert(idcase < grille.capacite);
 	mineAutourCase = ProdCase(grille, idcase, Mines, ligne, colonne);
 	if (mineAutourCase == 0 && grille.tab[idcase]=='.' && idcase < grille.capacite) {
 		ecrireGrille(grille, idcase, ' ');

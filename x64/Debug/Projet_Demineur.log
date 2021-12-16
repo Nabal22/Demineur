@@ -1,3 +1,6 @@
-﻿  ProdGrille.cpp
-C:\Users\alban\source\repos\Nabal22\projet-demineur\ProdGrille.cpp(265,21): warning C4101: 'k' : variable locale non référencée
+﻿  EtatPartie.cpp
+  ProdGrille.cpp
+C:\Users\alban\source\repos\Nabal22\projet-demineur\ProdGrille.cpp(269,21): warning C4101: 'k' : variable locale non référencée
+  main.cpp
+  Génération de code en cours...
   Projet_Demineur.vcxproj -> C:\Users\alban\Source\Repos\Nabal22\projet-demineur\x64\Debug\Projet_Demineur.exe
