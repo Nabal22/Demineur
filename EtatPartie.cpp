@@ -38,3 +38,9 @@ bool estGagne (Grille grille, Conteneur mines){
 	}
 	return partieGagne;
 }
+
+bool estPerdu(Grille grille, Conteneur mines) {
+	bool partiePerdu = false;
+	// pas mal la fonction mdrr
+	return partiePerdu;
+}

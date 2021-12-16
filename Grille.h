@@ -17,6 +17,7 @@ struct Grille {
 };
 
 
+
 void initGrille(Grille& c, unsigned int capa);
 
 void detruireGrille(Grille& c);
