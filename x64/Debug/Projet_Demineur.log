@@ -1,6 +1,11 @@
-﻿  EtatPartie.cpp
-  ProdGrille.cpp
-C:\Users\alban\source\repos\Nabal22\projet-demineur\ProdGrille.cpp(269,21): warning C4101: 'k' : variable locale non référencée
+﻿  Grille.cpp
   main.cpp
+  EtatPartie.cpp
+  probleme.cpp
+C:\Users\alban\source\repos\Nabal22\projet-demineur\probleme.cpp(22,16): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  ProdCoup.cpp
+  ProdGrille.cpp
+C:\Users\alban\source\repos\Nabal22\projet-demineur\ProdGrille.cpp(290,21): warning C4101: 'k' : variable locale non référencée
+  tableau.cpp
   Génération de code en cours...
   Projet_Demineur.vcxproj -> C:\Users\alban\Source\Repos\Nabal22\projet-demineur\x64\Debug\Projet_Demineur.exe

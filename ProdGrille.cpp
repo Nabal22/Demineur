@@ -263,13 +263,33 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
 	}
 }
 
-void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage) {
+void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne) {
+	unsigned int i, j;
 	cout << ligne << " " << colonne << endl;
+	ProdLigne(colonne);
+	for (i = 0, j = 0; i < grille.capacite; i++, j++) {
+		if (j == colonne)
+		{
+			cout << " |" << endl;
+			ProdLigne(colonne);
+			j = 0;
+		}
+		if (j == 0) {
+			cout << "| " << grille.tab[i];
+		}
+		else {
+			cout << " | " << grille.tab[i];
+		}
+	}
+	cout << " |";
+	cout << endl;
+	ProdLigne(colonne);
+}
 
+void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage) {
 	unsigned int i, j, k;
 	unsigned int mineAutourCase;
 	
-
 	for (i = 0; i < grille.capacite; i++) { // On remplit la grille de .
 		ecrireGrille(grille, i, '.');
 	}
@@ -286,7 +306,6 @@ void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigne
 		mineAutourCase = 0;
 		/*Cas ou l'on découvre une mine*/
 		if ( ( (historique.type->tab[i] == 'D') && verifCase(historique.position->tab[i], Mines) ) || (historique.type->tab[i] == 'M' && !verifCase(historique.position->tab[i], Mines) ) ) {
-			cout << "TEST : " << i << endl;
 			for (j = 0; j < Mines.capacite; j++) {
 				ecrireGrille(grille, Mines.tab[j], 'm');
 			}
@@ -305,24 +324,7 @@ void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigne
 	}
 
 	// Affichage de la grille
-	if (affichage == true) {
-		ProdLigne(colonne);
-		for (i = 0, j = 0; i < grille.capacite; i++, j++) {
-			if (j == colonne)
-			{
-				cout << " |" << endl;
-				ProdLigne(colonne);
-				j = 0;
-			}
-			if (j == 0) {
-				cout << "| " << grille.tab[i];
-			}
-			else {
-				cout << " | " << grille.tab[i];
-			}
-		}
-		cout << " |";
-		cout << endl;
-		ProdLigne(colonne);
+	if (affichage) {
+		AfficherGrille(grille, ligne, colonne);
 	}
 }

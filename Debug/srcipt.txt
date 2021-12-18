@@ -1,0 +1,1 @@
+Projet_Demineur.exe<in5.txt>out.txt

@@ -31,7 +31,6 @@ bool estGagne (Grille grille, Conteneur mines){
 			partieGagne = true;
 		}
 		else {
-			cout << endl << i;
 			partieGagne = false;
 			break;
 		}
@@ -41,6 +40,11 @@ bool estGagne (Grille grille, Conteneur mines){
 
 bool estPerdu(Grille grille, Conteneur mines) {
 	bool partiePerdu = false;
-	// pas mal la fonction mdrr
+	for (unsigned int i = 0; i < grille.capacite; i++) {
+		if (lireGrille(grille, i) == 'm') {
+			partiePerdu = true;
+			break;
+		}
+	}
 	return partiePerdu;
 }

@@ -15,6 +15,7 @@
 #include "historique.h"
 #include "Grille.h"
 #include "EtatPartie.h"
+#include "ProdCoup.h"
 
 using namespace std;
  /**
@@ -88,8 +89,34 @@ int main (){
                 cout << "game not won";
             }
             break;
-        //case 4 :
-        //case 5 :
+        case 4 :
+            cin >> lignes >> colonnes >> nbMines;
+            initialiser(Mines, nbMines);
+            for (i = 0; i < nbMines; i++) {
+                cin >> tempMine;
+                ecrire(Mines, i, tempMine);
+            }
+            cin >> nbCoups;
+            initGrille(coupType, nbCoups);
+            initGrille(coupEmplacement, nbCoups);
+            for (i = 0; i < nbCoups; i++) {
+                cin >> type >> tempCoup;
+                ecrireGrille(coupType, i, type);
+                ecrireGrille(coupEmplacement, i, tempCoup);
+            }
+            historique.type = &coupType;
+            historique.position = &coupEmplacement;
+            initGrille(partie, colonnes * lignes);
+            ProdGrille(partie, lignes, colonnes, nbMines, Mines, nbCoups, historique, false);
+            if (estPerdu(partie,Mines)) {
+                cout << "game lost";
+            }
+            else {
+                cout << "game not lost";
+            }
+            break;
+        case 5 :
+            ProdCoup();
         default: cout << "erreur";
     }
     return 0;
