@@ -16,8 +16,6 @@ struct Grille {
 	unsigned char* tab;	// support du Grille, un tableau alloue en memoire dynamique de taille fixee (capacite) 
 };
 
-
-
 void initGrille(Grille& c, unsigned int capa);
 
 void detruireGrille(Grille& c);

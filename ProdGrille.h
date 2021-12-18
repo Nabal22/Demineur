@@ -59,7 +59,7 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
 void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne);
 
 /** 
- * @brief Affiche la grille du demineur (Commande 2)
+ * @brief Produit une grille de demineur
  * @param [in] le nombre de ligne
  * @param [in] le nombre de colonne
  * @param [in] le nombre de mines

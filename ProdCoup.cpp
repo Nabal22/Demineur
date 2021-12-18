@@ -18,9 +18,22 @@ using namespace std;
 
 void ProdCoup() {
 	Grille partie;
-	unsigned int lignes, colonnes;
+	unsigned int lignes, colonnes,i;
 	cin >> lignes >> colonnes;
 	initGrille(partie, (lignes * colonnes));
 
+	unsigned char tmp = '_';
+
+
+	for (i = 0; i < partie.capacite; i++) {
+		cin >> tmp;
+		if (tmp != '_' && tmp != '|') {
+			cout << endl << "IN IF :" << tmp;
+			ecrireGrille(partie, i, tmp);
+		}
+		else {
+			cout << endl << "IN ELSE :" << tmp;
+		}
+	}
 	AfficherGrille(partie, lignes, colonnes);
 }

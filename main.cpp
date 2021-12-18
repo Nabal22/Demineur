@@ -117,6 +117,7 @@ int main (){
             break;
         case 5 :
             ProdCoup();
+            break;
         default: cout << "erreur";
     }
     return 0;
