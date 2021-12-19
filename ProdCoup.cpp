@@ -14,25 +14,45 @@
 #include "ProdGrille.h"
 using namespace std;
 
-// Réussir à faire en sorte que l'on rentre bien chaque 
-
 void ProdCoup() {
 	Grille partie;
-	unsigned int lignes, colonnes,i;
+	unsigned int lignes, colonnes,i=0;
+	unsigned char tmp, tmp2;
+
 	cin >> lignes >> colonnes;
 	initGrille(partie, (lignes * colonnes));
 
-	unsigned char tmp = '_';
-
-
-	for (i = 0; i < partie.capacite; i++) {
+	while (i < partie.capacite)
+	{
+		tmp = 0;
+		tmp2 = 0;
 		cin >> tmp;
-		if (tmp != '_' && tmp != '|') {
-			cout << endl << "IN IF :" << tmp;
-			ecrireGrille(partie, i, tmp);
+		if (tmp != '_') {
+			cin >> tmp2;
+			if (tmp2 == '|' && tmp=='|') {
+				tmp2 = ' ';
+				ecrireGrille(partie, i, tmp2);
+				i++;
+			}
+			else {
+				if (tmp2 == '|') {
+					ecrireGrille(partie, i, tmp);
+				}
+				else {
+					ecrireGrille(partie, i, tmp2);
+				}
+				i++;
+			}
+		}
+		else if ((((i + 1) % colonnes) == 0) && (tmp=='_') ){
+			tmp2 = ' ';
+			ecrireGrille(partie, i, tmp2);
+			i++;
 		}
 		else {
-			cout << endl << "IN ELSE :" << tmp;
+			if (i == partie.capacite - 1) {
+				break;
+			}
 		}
 	}
 	AfficherGrille(partie, lignes, colonnes);
