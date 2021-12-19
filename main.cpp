@@ -61,7 +61,7 @@ int main (){
             historique.type = &coupType;
             historique.position = &coupEmplacement;
             initGrille(partie, colonnes * lignes);
-            ProdGrille(partie,lignes, colonnes, nbMines, Mines, nbCoups, historique , true);
+            ProdGrilleCommande(partie,lignes, colonnes, nbMines, Mines, nbCoups, historique , true);
             break;
         case 3 :
             cin >> lignes >> colonnes >> nbMines;
@@ -81,7 +81,7 @@ int main (){
             historique.type = &coupType;
             historique.position = &coupEmplacement;
             initGrille(partie, colonnes * lignes);
-            ProdGrille(partie, lignes, colonnes, nbMines, Mines, nbCoups, historique, false);
+            ProdGrilleCommande(partie, lignes, colonnes, nbMines, Mines, nbCoups, historique, false);
             if (estGagne(partie, Mines)){
                 cout << "game won";
             }
@@ -107,7 +107,7 @@ int main (){
             historique.type = &coupType;
             historique.position = &coupEmplacement;
             initGrille(partie, colonnes * lignes);
-            ProdGrille(partie, lignes, colonnes, nbMines, Mines, nbCoups, historique, false);
+            ProdGrilleCommande(partie, lignes, colonnes, nbMines, Mines, nbCoups, historique, false);
             if (estPerdu(partie,Mines)) {
                 cout << "game lost";
             }
@@ -116,7 +116,10 @@ int main (){
             }
             break;
         case 5 :
-            ProdCoup();
+            cin >> lignes >> colonnes;
+            initGrille(partie, (lignes * colonnes));
+            ProdGrilleEntre(partie, lignes, colonnes);
+            AfficherGrille(partie, lignes, colonnes);
             break;
         default: cout << "erreur";
     }

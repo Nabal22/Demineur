@@ -59,7 +59,7 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
 void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne);
 
 /** 
- * @brief Produit une grille de demineur
+ * @brief Produit une grille de demineur à partir de paramètres
  * @param [in] le nombre de ligne
  * @param [in] le nombre de colonne
  * @param [in] le nombre de mines
@@ -67,5 +67,15 @@ void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne);
  * @param [in] le nombre de coups
  * @param [in] l'historique de coups
  */
-void ProdGrille(Grille grille,unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage);
+void ProdGrilleCommande(Grille grille,unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage);
+
+
+/**
+ * @brief Produit une grille de demineur à partir de la lecture d'une grille
+ * @param [in-out] la grille 
+ * @param [in-out] le nombre de lignes
+ * @param [in-out] le nombre de colonnes
+ */
+void ProdGrilleEntre(Grille& partie, unsigned int& lignes, unsigned int& colonnes);
+
 #endif

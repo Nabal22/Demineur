@@ -11,6 +11,7 @@
 #include <cassert>
 #include "ProdGrille.h"
 #include "Grille.h"
+
 using namespace std;
 
 bool verifCase(unsigned char coup, Conteneur mines) {
@@ -286,8 +287,8 @@ void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne) {
 	ProdLigne(colonne);
 }
 
-void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage) {
-	unsigned int i, j, k;
+void ProdGrilleCommande(Grille grille, unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage) {
+	unsigned int i, j;
 	unsigned int mineAutourCase;
 	
 	for (i = 0; i < grille.capacite; i++) { // On remplit la grille de .
@@ -322,9 +323,47 @@ void ProdGrille(Grille grille, unsigned int ligne, unsigned int colonne, unsigne
 			ecrireGrille(grille, historique.position->tab[i], 'x');
 		}
 	}
-
 	// Affichage de la grille
 	if (affichage) {
 		AfficherGrille(grille, ligne, colonne);
+	}
+}
+
+void ProdGrilleEntre(Grille& partie, unsigned int& lignes, unsigned int& colonnes){
+	unsigned int  i = 0;
+	unsigned char tmp, tmp2;
+
+	while (i < partie.capacite)
+	{
+		tmp = 0;
+		tmp2 = 0;
+		cin >> tmp;
+		if (tmp != '_') {
+			cin >> tmp2;
+			if (tmp2 == '|' && tmp == '|') {
+				tmp2 = ' ';
+				ecrireGrille(partie, i, tmp2);
+				i++;
+			}
+			else {
+				if (tmp2 == '|') {
+					ecrireGrille(partie, i, tmp);
+				}
+				else {
+					ecrireGrille(partie, i, tmp2);
+				}
+				i++;
+			}
+		}
+		else if ((((i + 1) % colonnes) == 0) && (tmp == '_')) {
+			tmp2 = ' ';
+			ecrireGrille(partie, i, tmp2);
+			i++;
+		}
+		else {
+			if (i == partie.capacite - 1) {
+				break;
+			}
+		}
 	}
 }

@@ -7,6 +7,4 @@
 #include <cassert>
 #include "Grille.h"
 
-void ProdCoup();
-
 #endif
