@@ -9,9 +9,9 @@
 #pragma once
 
 /** @brief Produit un problème
- *  @param [in] ligne le nombre de lignes
- *  @param [in] colonne le nombre de colonnes
- *	@param [in] nbMine le nombre de mines
+ *  @param[in] ligne le nombre de lignes
+ *  @param[in] colonne le nombre de colonnes
+ *	@param[in] nbMine le nombre de mines
  *  @pre nbMine < (ligne*colonne)
  */
 void Create(unsigned int ligne, unsigned int colonne, unsigned int nbMine);
