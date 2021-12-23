@@ -7,4 +7,12 @@
 #include <cassert>
 #include "Grille.h"
 
+/**
+ * @brief LProduit un nouveau coup
+ * @param[in-out] partie : la grille actuelle
+ * @param[in] colonne : le nombre de colonne
+ * @param[in] ligne : le nombre de ligne
+ */
+void prodCoup(Grille partie, unsigned int colonne, unsigned int ligne);
+
 #endif
