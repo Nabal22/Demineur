@@ -119,7 +119,7 @@ int main (){
             cin >> lignes >> colonnes;
             initGrille(partie, (lignes * colonnes));
             ProdGrilleEntre(partie, lignes, colonnes);
-            AfficherGrille(partie, lignes, colonnes);
+            prodCoup(partie, colonnes, lignes);
             break;
         default: cout << "erreur";
     }

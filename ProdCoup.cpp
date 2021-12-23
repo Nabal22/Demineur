@@ -16,24 +16,29 @@
 #include "Grille.h"
 #include "ProdGrille.h"
 
-
-
-
+using namespace std;
 
 void prodCoup(Grille partie, unsigned int colonne, unsigned int ligne) {
 	srand(time(NULL));
-    unsigned int tmp = rand() % (colonne * ligne);
+    unsigned int tmpPosition = rand() % (colonne * ligne), tmpType = tmpPosition % 2;
     bool coupPlace = false;
-    while (coupPlace) {
-        if (partie.tab[tmp] == '.') {
-            ecrireGrille(partie, tmp, ' ');
-            //faire en sorte que la grille s'actualise par rapport à ce nouveau coup
+
+    while (!coupPlace) {
+        if(partie.tab[tmpPosition] == '.') {
             coupPlace = true;
         }
         else
         {
-            tmp = rand() % (colonne * ligne);
+            tmpPosition = rand() % (colonne * ligne);
         }
     }
 
+    if (tmpType) {
+        cout << 'D';
+    }
+    else
+    {
+        cout << 'M';
+    }
+    cout << tmpPosition << endl;
 }
