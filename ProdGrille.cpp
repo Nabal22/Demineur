@@ -10,7 +10,6 @@
 #include <iostream>
 #include <cassert>
 #include "ProdGrille.h"
-#include "Grille.h"
 
 using namespace std;
 

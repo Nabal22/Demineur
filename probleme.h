@@ -7,6 +7,7 @@
  * Structures de donnees et algorithmes - BUT 1 Paris 16
  */
 #pragma once
+#include "tableau.h"
 
 /** @brief Produit un problème
  *  @param[in] ligne le nombre de lignes

@@ -12,11 +12,8 @@
 #include <time.h>
 #include <iostream>
 #include <cassert>
-#include "probleme.h"
-#include "tableau.h"
 #include "EtatPartie.h"
-#include "Grille.h"
-#include "ProdGrille.h"
+
 using namespace std;
 
 bool estGagne (Grille grille, Conteneur mines){

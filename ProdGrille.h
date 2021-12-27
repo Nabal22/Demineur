@@ -14,9 +14,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include "tableau.h"
 #include "historique.h"
-#include "Grille.h"
 
 /**
  * @brief Vérifie si une case est une mine

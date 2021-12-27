@@ -4,8 +4,8 @@
 
 
 #include <iostream>
-#include "tableau.h"
-#include "Grille.h"
+#include "probleme.h"
+#include "ProdGrille.h"
 
 /**
  * @brief Renvoie si une partie est gagné ou non

@@ -9,11 +9,6 @@
  */
 
 #include <iostream>
-#include "probleme.h"
-#include "ProdGrille.h"
-#include "tableau.h"
-#include "historique.h"
-#include "Grille.h"
 #include "EtatPartie.h"
 #include "ProdCoup.h"
 

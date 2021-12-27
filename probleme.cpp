@@ -13,7 +13,6 @@
 #include <iostream>
 #include <cassert>
 #include "probleme.h"
-#include "tableau.h"
 
 using namespace std;
 
