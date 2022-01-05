@@ -1,4 +1,13 @@
-﻿#pragma once
+﻿/**
+ * @file Grille.h
+ * Projet SDA
+ * @author Regenwetter Simon et Talagrand Alban
+ * @version 5 05/01/2022
+ * @brief Projet SDA démineur - Fichier relatif à la manipulation de conteneur Grille
+ * Structures de donn�es et algorithmes - BUT 1 Paris 16
+*/
+
+#pragma once
 
 #include <iostream>
 #include <cassert>

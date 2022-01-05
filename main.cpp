@@ -12,14 +12,7 @@
 #include "ProdCoup.h"
 
 using namespace std;
- /**
-  * @brief test modif
- */
-struct Coup {
-    unsigned short type, position;
-};
 
-/* mettre des assert car programme ne plante pas quand on met plus de coup que le nombre de coup*/
 int main (){
     unsigned int commande;
 

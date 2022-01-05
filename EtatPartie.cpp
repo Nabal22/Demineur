@@ -1,10 +1,10 @@
 ﻿/**
- * @file probleme.cpp
+ * @file EtatPartie.cpp
  * Projet SDA
  * @author Regenwetter Simon et Talagrand Alban
- * @version 1 27/11/2021
- * @brief Projet SDA démineur - Exercice 1
- * Structures de donn�es et algorithmes - BUT 1 Paris 16
+ * @version 5 05/01/2022
+ * @brief Projet SDA demineur - Fonction relative au commande 3 (game won/not won) et 4 (game lost/not lost)
+ * Structures de donnees et algorithmes - BUT 1 Paris 16
  */
 
 #include <stdio.h>
@@ -16,14 +16,15 @@
 
 using namespace std;
 
-bool estGagne (Grille grille, Conteneur mines) {
+bool estGagne(const Grille grille, const Conteneur mines) {
 	bool partieGagne = false;
-	for (unsigned int i = 0 ; i < grille.capacite; i++) {
-		if ( lireGrille(grille, i) == ' ' || lireGrille(grille, i) == '1' || lireGrille(grille, i) == '2' || lireGrille(grille, i) == '3' || lireGrille(grille, i) == '4' 
-			|| lireGrille(grille, i) == '5'|| lireGrille(grille, i) == '6' || lireGrille(grille, i) == '7' || lireGrille(grille, i) == '8') {
+	for (unsigned int i = 0; i < grille.capacite; i++) {
+		if (lireGrille(grille, i) == ' ' || lireGrille(grille, i) == '1' || lireGrille(grille, i) == '2' || lireGrille(grille, i) == '3' || lireGrille(grille, i) == '4'
+			|| lireGrille(grille, i) == '5' || lireGrille(grille, i) == '6' || lireGrille(grille, i) == '7' || lireGrille(grille, i) == '8') {
 			partieGagne = true;
 		}
-		else if (lireGrille(grille, i) == '.' && verifCase(i,mines) ) {
+		else if (lireGrille(grille, i) == '.' && verifCase(i, mines))
+		{
 			partieGagne = true;
 		}
 		else {
@@ -34,7 +35,7 @@ bool estGagne (Grille grille, Conteneur mines) {
 	return partieGagne;
 }
 
-bool estPerdu(Grille grille, Conteneur mines) {
+bool estPerdu(const Grille grille, const Conteneur mines) {
 	bool partiePerdu = false;
 	for (unsigned int i = 0; i < grille.capacite; i++) {
 		if (lireGrille(grille, i) == 'm') {

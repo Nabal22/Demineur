@@ -1,26 +1,34 @@
+ï»¿/**
+ * @file EtatPartie.cpp
+ * Projet SDA
+ * @author Regenwetter Simon et Talagrand Alban
+ * @version 5 05/01/2022
+ * @brief Projet SDA demineur - Header de EtatPartie.cpp - Fonction relative au commande 3 (game won/not won) et 4 (game lost/not lost)
+ * Structures de donnees et algorithmes - BUT 1 Paris 16
+ */
+
 #pragma once
 #ifndef _ETATPARTIE_
 #define  _ETATPARTIE_
-
 
 #include <iostream>
 #include "probleme.h"
 #include "ProdGrille.h"
 
-/**
- * @brief Renvoie si une partie est gagné ou non
- * @param[in] grille : la grille
- * @param[in] mines : le conteneur de mines
- * @return partie gagné ou non
- */
-bool estGagne(Grille grille, Conteneur mines);
+ /**
+  * @brief Renvoie si une partie est gagnï¿½ ou non
+  * @param[in] grille : la grille
+  * @param[in] mines : le conteneur de mines
+  * @return partie gagnï¿½ ou non
+  */
+bool estGagne(const Grille grille, const Conteneur mines);
 
 /**
  * @brief Renvoie si une partie est perdu ou non
  * @param[in] grille : la grille
  * @param[in] mines : le conteneur de mines
- * @return partie gagné ou non
+ * @return partie gagnï¿½ ou non
  */
-bool estPerdu(Grille grille, Conteneur mines);
+bool estPerdu(const Grille grille, const Conteneur mines);
 
 #endif

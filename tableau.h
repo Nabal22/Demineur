@@ -1,7 +1,14 @@
+/**
+ * @file tableau.cpp
+ * Projet SDA
+ * @author Regenwetter Simon et Talagrand Alban
+ * @version 8 05/01/2022
+ * @brief Projet SDA démineur - Header de tableau.cpp - Produire et manipuler un conteneur
+ * Structures de données et algorithmes - BUT 1 Paris 16
+*/
 #pragma once
 #ifndef _TABLEAU_
 #define _TABLEAU_
-
 
 /** @brief Type du conteneur d'items
  *  alloue en memoire dynamique et de capacite fixee

@@ -1,3 +1,11 @@
+/**
+ * @file ProdCoup.h
+ * Projet SDA
+ * @author Regenwetter Simon et Talagrand Alban
+ * @version 8 05/01/2021
+ * @brief Projet SDA démineur - Header de ProdCoup.cpp - Produire un coup - commande 5
+ * Structures de données et algorithmes - BUT 1 Paris 16
+ */
 #pragma once
 #ifndef _PRODCOUP_
 #define _PRODCOUP_

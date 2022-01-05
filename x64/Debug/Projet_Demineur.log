@@ -1,5 +1,11 @@
-﻿  ProdCoup.cpp
-C:\Users\simon\source\repos\Nabal22\projet-demineur\ProdCoup.cpp(21,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+﻿  Grille.cpp
   main.cpp
+  EtatPartie.cpp
+  probleme.cpp
+C:\Users\alban\source\repos\Nabal22\projet-demineur\probleme.cpp(21,15): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  ProdCoup.cpp
+C:\Users\alban\source\repos\Nabal22\projet-demineur\ProdCoup.cpp(21,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  ProdGrille.cpp
+  tableau.cpp
   Génération de code en cours...
-  Projet_Demineur.vcxproj -> C:\Users\simon\Source\Repos\Nabal22\projet-demineur\x64\Debug\Projet_Demineur.exe
+  Projet_Demineur.vcxproj -> C:\Users\alban\Source\Repos\Nabal22\projet-demineur\x64\Debug\Projet_Demineur.exe

@@ -1,12 +1,12 @@
-﻿#pragma once
-/**
- * @file probleme.cpp
+﻿/**
+ * @file ProdGrille.cpp
  * Projet SDA
  * @author Regenwetter Simon et Talagrand Alban
- * @version 1 27/11/2021
- * @brief Projet SDA démineur - Exercice 1
+ * @version 8 05/01/2022
+ * @brief Projet SDA démineur - Produire et manipuler une grille et ses cases
  * Structures de donn�es et algorithmes - BUT 1 Paris 16
 */
+#pragma once
 #include <iostream>
 #include <cassert>
 #include "ProdGrille.h"

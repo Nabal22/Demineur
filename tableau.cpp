@@ -1,12 +1,12 @@
-﻿#pragma once
-/**
- * @file Conteneur.cpp
- * Projet sem03-tp-Cpp1
- * @author Talagrand Alban - Rengewetter Simon
- * @version 2 18/11/11
- * @brief Caracteristiques d'un tableau
- */
-
+﻿/**
+ * @file tableau.cpp
+ * Projet SDA
+ * @author Regenwetter Simon et Talagrand Alban
+ * @version 8 05/01/2022
+ * @brief Projet SDA démineur - Produire et manipuler un conteneur
+ * Structures de données et algorithmes - BUT 1 Paris 16
+*/
+#pragma once
 #include <iostream>
 #include <cassert>
 #include "tableau.h"

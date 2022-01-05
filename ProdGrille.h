@@ -1,3 +1,11 @@
+/**
+ * @file ProdGrille.h
+ * Projet SDA
+ * @author Regenwetter Simon et Talagrand Alban
+ * @version 8 05/01/2022
+ * @brief Projet SDA démineur - Header de ProdGrille.cpp - Produire et manipuler une grille et ses cases
+ * Structures de donn�es et algorithmes - BUT 1 Paris 16
+*/
 #pragma once
 #ifndef _PRODGRILLE_
 #define _PRODGRILLE_
