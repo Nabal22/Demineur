@@ -12,6 +12,9 @@
 #include "tableau.h"
 #include "Grille.h"
 
+/** @brief Type Historique contenant un pointeur grille liés aux informations de type
+ *  et un pointeur de grille liés aux informations de positions
+ */
 struct Historique {
 	Grille* type; // Pointeur vers une grille contenant les types des coups
 	Grille* position; // Pointeur vers une grille contenant la position des coups

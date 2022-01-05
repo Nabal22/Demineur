@@ -1,5 +1,5 @@
 /**
- * @file tableau.cpp
+ * @file tableau.h
  * Projet SDA
  * @author Regenwetter Simon et Talagrand Alban
  * @version 8 05/01/2022
@@ -10,8 +10,8 @@
 #ifndef _TABLEAU_
 #define _TABLEAU_
 
-/** @brief Type du conteneur d'items
- *  alloue en memoire dynamique et de capacite fixee
+/** @brief Type du conteneur contenant un tableau d'entiers non-signés
+ *  alloue en memoire dynamique et de capacite fixe
  */
 struct Conteneur {
 	unsigned int capacite; 	// capacite du conteneur (>0)

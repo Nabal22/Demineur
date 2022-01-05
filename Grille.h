@@ -10,6 +10,8 @@
 #ifndef _GRILLE_
 #define _GRILLE_
 
+/** @brief Type de grille contenant un tableau de char non-signés alloué en mémoire dynamique et de capacité fixe 
+ */
 struct Grille {
 	unsigned int capacite; 	// capacite du Grille (>0)
 	unsigned char* tab;	// support du Grille, un tableau alloue en memoire dynamique de taille fixee (capacite) 

@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "ProdGrille.h"
+#include "ProdCoup.h"
 
 using namespace std;
 
