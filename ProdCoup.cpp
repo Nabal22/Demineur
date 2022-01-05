@@ -17,7 +17,7 @@
 
 using namespace std;
 
-void prodCoup(Grille partie, unsigned int colonne, unsigned int ligne) {
+void prodCoup(const Grille partie, const unsigned int colonne, const unsigned int ligne) {
 	srand(time(NULL));
     unsigned int tmpPosition = rand() % (colonne * ligne), tmpType = tmpPosition % 2;
     bool coupPlace = false;

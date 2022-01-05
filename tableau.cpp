@@ -13,7 +13,7 @@
 using namespace std;
 
 
-void initialiser(Conteneur& c, unsigned int capa) {
+void initialiser(Conteneur& c, const unsigned int capa) {
     // V�rifiez la pr�condition
     assert(capa > 0);
         /**L'objectif est d'initialiser tous les attributs du conteneur c
@@ -32,7 +32,7 @@ void detruire(Conteneur& c) {
 }
 
 
-unsigned int lire(const Conteneur& c, unsigned int i) {
+unsigned int lire(const Conteneur& c, const unsigned int i) {
     /** V�rifiez la precondition
     * et retournez l'item � la position i dans le conteneur c */
     assert(i < c.capacite);
@@ -40,7 +40,7 @@ unsigned int lire(const Conteneur& c, unsigned int i) {
 }
 
 
-void ecrire(Conteneur& c, unsigned int i, const unsigned int& it) {
+void ecrire(Conteneur& c, const unsigned int i, const unsigned int& it) {
     assert(i <= c.capacite);
     c.tab[i] = it;
 }

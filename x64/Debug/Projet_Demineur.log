@@ -1,1 +1,5 @@
-﻿  Projet_Demineur.vcxproj -> C:\Users\simon\Source\Repos\Nabal22\projet-demineur\x64\Debug\Projet_Demineur.exe
+﻿  ProdCoup.cpp
+C:\Users\simon\source\repos\Nabal22\projet-demineur\ProdCoup.cpp(21,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  main.cpp
+  Génération de code en cours...
+  Projet_Demineur.vcxproj -> C:\Users\simon\Source\Repos\Nabal22\projet-demineur\x64\Debug\Projet_Demineur.exe

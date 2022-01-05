@@ -13,6 +13,6 @@
  * @param[in] colonne : le nombre de colonne
  * @param[in] ligne : le nombre de ligne
  */
-void prodCoup(Grille partie, unsigned int colonne, unsigned int ligne);
+void prodCoup(const Grille partie, const unsigned int colonne, const unsigned int ligne);
 
 #endif

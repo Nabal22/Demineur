@@ -22,7 +22,7 @@
  * @param[in] mines : le conteneur de mines
  * @return renvoie si la case est une mine ou pas
  */
-bool verifCase(unsigned char coup, Conteneur mines);
+bool verifCase(const unsigned char coup, const Conteneur mines);
 
 /**
  * @brief Renvoie le nombre de mines entourant une case
@@ -33,13 +33,13 @@ bool verifCase(unsigned char coup, Conteneur mines);
  * @param[in] colonne : le nombre de colonne
  * @pre i < grille.capacite
  */
-unsigned int ProdCase(Grille grille, unsigned int i, Conteneur mines, unsigned int ligne, unsigned int colonne);
+unsigned int ProdCase(Grille grille, const unsigned int i, Conteneur mines, const unsigned int ligne, const unsigned int colonne);
 
 /**
  * @brief Produit une ligne de "___"
  * @param[in] colonne le nombre de colonne de la grille
  */
-void ProdLigne(unsigned int colonne);
+void ProdLigne(const unsigned int colonne);
 
 /**
  * @brief Modifie le contenue d'une case de la grille
@@ -52,9 +52,16 @@ void ProdLigne(unsigned int colonne);
  * @param[in] historique : l'historique de coup
  * @pre idcase < grille.capacite
  */
-void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille Grille, Historique historique);
+void DemasqueCase(const unsigned int idcase, const unsigned int ligne, const unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille grille, Historique historique);
 
-void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne);
+
+/**
+ * @brief Affiche la grille
+ * param[in] grille : grille que l'on souhaite afficher
+ * param[in] ligne : ligne de la grille
+ * param[in] colonne : colonne de la grille
+ */
+void AfficherGrille(const Grille grille, const unsigned int ligne, const unsigned int colonne);
 
 /** 
  * @brief Produit une grille de demineur à partir de paramètres
@@ -65,7 +72,7 @@ void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne);
  * @param[in] le nombre de coups
  * @param[in] l'historique de coups
  */
-void ProdGrilleCommande(Grille grille,unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage);
+void ProdGrilleCommande(Grille grille, const unsigned int ligne, const unsigned int colonne, const unsigned int nbMines, Conteneur Mines, const unsigned int nbCoups, const Historique historique, const bool affichage);
 
 
 /**
@@ -74,6 +81,6 @@ void ProdGrilleCommande(Grille grille,unsigned int ligne, unsigned int colonne, 
  * @param[in-out] le nombre de lignes
  * @param[in-out] le nombre de colonnes
  */
-void ProdGrilleEntre(Grille& partie, unsigned int& lignes, unsigned int& colonnes);
+void ProdGrilleEntre(Grille& partie, const unsigned int& lignes, const unsigned int& colonnes);
 
 #endif

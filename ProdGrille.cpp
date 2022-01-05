@@ -13,7 +13,7 @@
 
 using namespace std;
 
-bool verifCase(unsigned char coup, Conteneur mines) {
+bool verifCase(const unsigned char coup, const Conteneur mines) {
 	for (unsigned int i = 0; i < mines.capacite; i++) {
 		if (coup == mines.tab[i]) {
 			return true;
@@ -22,7 +22,7 @@ bool verifCase(unsigned char coup, Conteneur mines) {
 	return false;
 }
 
-unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned int ligne, unsigned int colonne) {
+unsigned int ProdCase(Grille grille, const unsigned int i , Conteneur mines, const unsigned int ligne, const unsigned int colonne) {
 	assert(i < grille.capacite);
 	unsigned int mineAlentour = 0;
 	unsigned int j;
@@ -190,7 +190,7 @@ unsigned int ProdCase(Grille grille, unsigned int i , Conteneur mines, unsigned 
 	return mineAlentour;
 }
 
-void ProdLigne(unsigned int colonne) {
+void ProdLigne(const unsigned int colonne) {
 	unsigned int k;
 	for (k = 0; k < colonne; k++) {
 		cout << " ___";
@@ -198,7 +198,7 @@ void ProdLigne(unsigned int colonne) {
 	cout << endl;
 }
 
-void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille grille, Historique historique) {
+void DemasqueCase(const unsigned int idcase, const unsigned int ligne, const unsigned int colonne, unsigned int mineAutourCase, Conteneur Mines, Grille grille, Historique historique) {
 	assert(idcase < grille.capacite);
 	mineAutourCase = ProdCase(grille, idcase, Mines, ligne, colonne);
 	if (mineAutourCase == 0 && grille.tab[idcase]=='.' && idcase < grille.capacite) {
@@ -263,7 +263,7 @@ void DemasqueCase(unsigned int idcase, unsigned int ligne, unsigned int colonne,
 	}
 }
 
-void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne) {
+void AfficherGrille(const Grille grille, const unsigned int ligne, const unsigned int colonne) {
 	unsigned int i, j;
 	cout << ligne << " " << colonne << endl;
 	ProdLigne(colonne);
@@ -286,7 +286,7 @@ void AfficherGrille(Grille grille, unsigned int ligne, unsigned int colonne) {
 	ProdLigne(colonne);
 }
 
-void ProdGrilleCommande(Grille grille, unsigned int ligne, unsigned int colonne, unsigned int nbMines, Conteneur Mines, unsigned int nbCoups, Historique historique, bool affichage) {
+void ProdGrilleCommande(Grille grille, const unsigned int ligne, const unsigned int colonne, const unsigned int nbMines, Conteneur Mines, const unsigned int nbCoups, const Historique historique, const bool affichage) {
 	unsigned int i, j;
 	unsigned int mineAutourCase;
 	
@@ -328,12 +328,11 @@ void ProdGrilleCommande(Grille grille, unsigned int ligne, unsigned int colonne,
 	}
 }
 
-void ProdGrilleEntre(Grille& partie, unsigned int& lignes, unsigned int& colonnes){
+void ProdGrilleEntre(Grille& partie, const unsigned int& lignes, const unsigned int& colonnes){
 	unsigned int  i = 0;
 	unsigned char tmp, tmp2;
 
-	while (i < partie.capacite)
-	{
+	while (i < partie.capacite) {
 		tmp = 0;
 		tmp2 = 0;
 		cin >> tmp;

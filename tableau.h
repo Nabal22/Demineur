@@ -19,7 +19,7 @@ struct Conteneur {
  * @param [in] capa : la capacite du conteneur
  * @pre capa>0
  */
-void initialiser(Conteneur& c, unsigned int capa);
+void initialiser(Conteneur& c, const unsigned int capa);
 
 /**
  * @brief Desalloue un conteneur d'items en memoire dynamique
@@ -35,7 +35,7 @@ void detruire(Conteneur& c);
  * @return l'item e la position i
  * @pre i < c.capacite
  */
-unsigned int lire(const Conteneur& c, unsigned int i);
+unsigned int lire(const Conteneur& c, const unsigned int i);
 
 /**
  * @brief Ecrire un item dans un conteneur d'items
@@ -44,6 +44,6 @@ unsigned int lire(const Conteneur& c, unsigned int i);
  * @param[in] item : l'item e ecrire
  * @pre i < c.capacite
  */
-void ecrire(Conteneur& c, unsigned int i, const unsigned int& it);
+void ecrire(Conteneur& c, const unsigned int i, const unsigned int& it);
 
 #endif

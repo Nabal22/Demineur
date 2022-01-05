@@ -2,10 +2,9 @@
  * @file main.cpp
  * Projet SDA
  * @author Regenwetter Simon et Talagrand Alban
- * @version 1 27/11/2021
- * @brief Projet SDA démineur - Exercice 1
+ * @version 8 05/01/2021
+ * @brief Projet SDA démineur
  * Structures de donn�es et algorithmes - BUT 1 Paris 16
- * Simon petite merde
  */
 
 #include <iostream>
