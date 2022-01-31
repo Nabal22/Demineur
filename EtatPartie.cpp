@@ -4,7 +4,7 @@
  * @author Regenwetter Simon et Talagrand Alban
  * @version 5 05/01/2022
  * @brief Projet SDA demineur - Fonction relative au commande 3 (game won/not won) et 4 (game lost/not lost)
- * Structures de donnees et algorithmes - BUT 1 Paris 16
+ * Structures de donnees et algorithmes - BUT 1 Paris 16 - Changement
  */
 
 #include <stdio.h>
